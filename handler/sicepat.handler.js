@@ -42,7 +42,7 @@ const getInfoOngkir = async (req) => {
 
 const checkResi = async () => {
     try {
-        return await(await fetch(`${BASE_URL}/check-awb/${req.query.q}`)).json()
+        return await(await fetch(`${BASE_URL}/check-awb/${req.query.resi}`)).json()
     } catch (e) {
         return e
     }

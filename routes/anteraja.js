@@ -7,9 +7,9 @@ const group = `anteraja`
 const routes = (app) => {
     app.route(`/${group}`).get(function(req, res) {
         res.status(200).send(response(200, 'Route untuk kurir anter aja', {
-            METHOD_GET: ['/getAddress?q={nama_kota}'],
+            METHOD_GET: [`${group}/getAddress?q={nama_kota}`],
             METHOD_POST: [{
-                url: '/getInfo',
+                url: `${group}/getInfo`,
                 body: {
                     origin: 'district_code dari /getAddress',
                     destination: 'district_code dari /getAddress',

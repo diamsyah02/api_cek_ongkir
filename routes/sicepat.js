@@ -8,12 +8,12 @@ const routes = (app) => {
     app.route(`/${group}`).get(function(req, res) {
         res.status(200).send(response(200, 'Route untuk kurir sicepat', {
             METHOD_GET: [
-                '/getAddressOrigin?q={nama_kota}',
-                '/getAddressDestination?q={nama_kota}',
-                '/checkResi?q={resi}',
+                `${group}/getAddressOrigin?q={nama_kota}`,
+                `${group}/getAddressDestination?q={nama_kota}`,
+                `${group}/checkResi?resi={no_resi}`,
             ],
             METHOD_POST: [{
-                url: '/getInfoOngkir',
+                url: `${group}/getInfoOngkir`,
                 body: {
                     origin: 'origin_code dari /getAddressOrigin',
                     destination: 'destination_code dari /getAddressDestination',

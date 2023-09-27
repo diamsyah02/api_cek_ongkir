@@ -8,6 +8,7 @@ const cors = require('cors')
 const response = require('./utils/WebResponse')
 const RouteAnterAja = require('./routes/anteraja')
 const RouteSicepat = require('./routes/sicepat')
+const RouteLionParcel = require('./routes/lionparcel')
 
 app.use(cors())
 app.listen(PORT)
@@ -18,7 +19,9 @@ app.route(`/`).get(function(req, res) {
     res.status(200).send(response(200, 'Rest Api Cek Ongkir', {
         anteraja: '/anteraja',
         sicepat: '/sicepat',
+        lionparcel: '/lionparcel',
     }))
 })
 RouteAnterAja(app)
 RouteSicepat(app)
+RouteLionParcel(app)
